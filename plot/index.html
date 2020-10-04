@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style type="text/css">
+  
+	.node {
+    cursor: pointer;
+  }
+
+  .overlay{
+      background-color:#EEE;
+  }
+   
+  .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+   
+  .node text {
+    font-size:10px; 
+    font-family:sans-serif;
+  }
+   
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+  }
+
+  .templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+  }
+
+  .ghostCircle.show{
+      display:block;
+  }
+
+  .ghostCircle, .activeDrag .ghostCircle{
+       display: none;
+  }
+
+</style>
+<html>
+    <head>
+	<title> Mathematics Subject Classification</title>
+	<script src="https://d3js.org/d3.v6.js"></script>
+    </head>
+    <body>
+	<div style="text-align: center;" >
+	    <h1>  Mathematics Subject Classification 2020 edition</h1>
+	</div>
+	<div>
+	    <p align="left "> (From:
+		<a href="https://es.wikipedia.org/wiki/Mathematics_Subject_Classification">Wikipedia</a>
+		) La Clasificación Matemática por Temas, conocida por sus siglas en inglés como MSC (Mathematics Subject Classification) es un esquema de clasificación alfanumérico colaborativo producida por el personal de las dos principales bases de datos de revisión matemáticos, Mathematical Reviews (MRDB) y Zentralblatt MATH (ZMATH).</p  >
+
+	    <p align="left ">	El propósito principal de la clasificación de artículos en la literatura matemática utilizando el esquema de MSC es ayudar a los usuarios a encontrar los temas de interés actual o potencial para ellos tan fácilmente como sea posible en los productos derivados de la Mathematical Reviews Database como MathSciNet, en Zentralblatt MATH, o cualquier otro sitio donde se utilice este esquema de clasificación. En la actualidad es el sistema más común y muchas revistas de matemáticas piden a los autores la lista de códigos de tema del MSC en sus artículos</p >
+
+
+	    
+	</div>
+
+	<h3>Diagrama interactivo de la MSC2020</h3>
+	<p>Puede acceder a una version a parte aqui:<a href="https://observablehq.com/@thebooort/collapsible-tree">https://observablehq.com/@thebooort/collapsible-tree</a> </p>
+	<div id="observablehq-d1514920"></div>
+	<script type="module">
+	 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+	 import define from "https://api.observablehq.com/@thebooort/collapsible-tree.js?v=3";
+	 const inspect = Inspector.into("#observablehq-d1514920");
+	 (new Runtime).module(define, name => name === "chart" ? inspect() : undefined);
+	</script>
+	<script src="dndTree.js"></script>
+
+
+	<div>
+	    <h3> Links de Interés </h3 >
+	    <p align="left ">
+		<ul>
+		    <li><a href="https://github.com/thebooort/cms2020-plots">Github repo (processed data, codes and visualizations)</a></li>
+		    <li>	<a href="https://thebooort.github.io">Blog post</a></li>
+		    <li><a href="https://raw.githubusercontent.com/gbv/jskos-data/master/msc2020/msc2020-concepts.ndjson">Raw data</a></li>
+		    <li><a href="https://msc2020.org/#">Oficial MSC 2020 webpage</a></li>
+		</ul>
+
+
+
+
+
+	    </p  >
+
+
+
+	    
+	</div>
+
+
+    </body>
+</html>
