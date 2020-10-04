@@ -563,4 +563,4 @@ function collapseAll(){
 function expandAll(){
     expand(root); 
     update(root);
-};
+}
