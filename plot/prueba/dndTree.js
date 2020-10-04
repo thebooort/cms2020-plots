@@ -118,7 +118,7 @@ treeJSON = d3.json("final_data.json", function(error, treeData) {
             }, 50);
         }
     }
-	
+
     // Define the zoom function for the zoomable tree
 
     function zoom() {
@@ -289,16 +289,6 @@ treeJSON = d3.json("final_data.json", function(error, treeData) {
         }
     }
 
-function expandAll(){
-    expand(root); 
-    update(root);
-}
-
-function collapseAll(){
-    root.children.forEach(collapse);
-    collapse(root);
-    update(root);
-}
     var overCircle = function(d) {
         selectedNode = d;
         updateTempConnector();
@@ -555,12 +545,6 @@ function collapseAll(){
     root.y0 = 0;
 
     // Layout the tree initially and center on the root node.
-    root.children.forEach(collapse);
-    //collapse(root);
     update(root);
     centerNode(root);
 });
-function expandAll(){
-    expand(root); 
-    update(root);
-}
