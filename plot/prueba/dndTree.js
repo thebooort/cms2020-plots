@@ -28,26 +28,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 
 // Get JSON data
 treeJSON = d3.json("final_data.json", function(error, treeData) {
-function expand(d){   
-    var children = (d.children)?d.children:d._children;
-    if (d._children) {        
-        d.children = d._children;
-        d._children = null;       
-    }
-    if(children)
-      children.forEach(expand);
-}
 
-function expandAll(){
-    expand(root); 
-    update(root);
-}
-
-function collapseAll(){
-    root.children.forEach(collapse);
-    collapse(root);
-    update(root);
-}
     // Calculate total nodes, max label length
     var totalNodes = 0;
     var maxLabelLength = 0;
@@ -137,7 +118,7 @@ function collapseAll(){
             }, 50);
         }
     }
-
+	
     // Define the zoom function for the zoomable tree
 
     function zoom() {
@@ -308,6 +289,16 @@ function collapseAll(){
         }
     }
 
+function expandAll(){
+    expand(root); 
+    update(root);
+}
+
+function collapseAll(){
+    root.children.forEach(collapse);
+    collapse(root);
+    update(root);
+}
     var overCircle = function(d) {
         selectedNode = d;
         updateTempConnector();
@@ -564,6 +555,8 @@ function collapseAll(){
     root.y0 = 0;
 
     // Layout the tree initially and center on the root node.
+    root.children.forEach(collapse);
+    collapse(root);
     update(root);
     centerNode(root);
 });
