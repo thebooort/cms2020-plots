@@ -556,7 +556,11 @@ function collapseAll(){
 
     // Layout the tree initially and center on the root node.
     root.children.forEach(collapse);
-    collapse(root);
+    //collapse(root);
     update(root);
     centerNode(root);
 });
+function expandAll(){
+    expand(root); 
+    update(root);
+};
