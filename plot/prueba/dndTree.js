@@ -66,7 +66,7 @@ treeJSON = d3.json("final_data.json", function(error, treeData) {
         var children = childrenFn(parent);
         if (children) {
             var count = children.length;
-            for (var i = 0; i < count; i++) {
+            for (var i = 0; i < 1; i++) {
                 visit(children[i], visitFn, childrenFn);
             }
         }
